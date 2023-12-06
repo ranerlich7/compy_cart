@@ -66,6 +66,7 @@ async function decreaseCartQuantity() {
     const existingProductIndex = cartItems.findIndex(item => item.product.id === product.id)
     console.log(cartItems)
     console.log(product)
+    console.log( existingProductIndex )
     await ProductService.deleteCartItem(cartItems[existingProductIndex].id, token)
     setCartItems(prevCartItems => prevCartItems.filter(item => item.product.id !== product.id));
 }
