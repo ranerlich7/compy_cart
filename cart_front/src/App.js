@@ -53,16 +53,32 @@ function App() {
         console.log(e);
     }
 };
-  const handleSearch = () => {
-    if (searchTerm.trim() === '') {
-        setProducts(originalProducts);
-    } else {
-        const filteredProducts = originalProducts.filter(product =>
-            product.name.toLowerCase().includes(searchTerm.toLowerCase())
+const handleSearch = () => {
+  if (searchTerm.trim() === '') {
+      setProducts(originalProducts);
+  } else {
+      const filteredProducts = originalProducts.filter(product =>
+          product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+      if (filteredProducts.length === 0) {
+        toast.error(
+          <div>
+              No products found
+          </div>,
+          {
+              position: "top-center",
+              style: {
+                  width: "120%",                                        }
+          }
+  
         );
-        setProducts(filteredProducts);
-    }
+      }
+
+      setProducts(filteredProducts);
+  }
 };
+
   async function signupapp(user = null) {
     // default user to null
     productServices
