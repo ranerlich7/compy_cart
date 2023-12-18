@@ -10,19 +10,23 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework import generics
 from rest_framework_simplejwt.tokens import RefreshToken
 
+#### Ran:  *** dont leave comments 
 # class CartItemList(generics.ListCreateAPIView):
 #     queryset = CartItem.objects.all()
 #     serializer_class = CartItemSerializer
 
+#### Ran:  *** did you understand the use of classes? we did not do it this way
 class ProductList(generics.ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
+#### Ran:  *** dont leave comments 
 # class CartItemDetail(generics.RetrieveUpdateDestroyAPIView):
 #     queryset = CartItem.objects.all()
 #     serializer_class = CartItemSerializer
 
 
+#### Ran:  *** dont leave comments 
 # class CartDetail(generics.RetrieveUpdateAPIView):
 #     queryset = Cart.objects.all()
 #     serializer_class = CartSerializer
